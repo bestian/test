@@ -30,10 +30,10 @@ export default {
     }
   },
   methods: {
-    has: function (list, k) {
+    has (list, k) {
       if (!k) { return [] }
       var r = new RegExp(k)
-      return list.filter(function (w) { return r.test(w) })
+      return list.filter((w) => { return r.test(w) })
     }
   }
 }
