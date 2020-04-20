@@ -12,13 +12,26 @@
       </router-link>
     </nav>
     <img src="./assets/logo.png">
-    <router-view/>
+    <router-view :words="words"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      words: ['資料下載中']
+    }
+  },
+  mounted: function () {
+    this.$http.get('https://www.moedict.tw/c/index.json').then(response => {
+      // get body data
+      this.words = response.body
+    }, response => {
+      // error callback
+    })
+  }
 }
 </script>
 

@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import '../node_modules/semantic-ui-css/semantic.min.css'
 import VueResource from 'vue-resource'
+import autofocus from 'vue-autofocus-directive'
+
+Vue.directive('autofocus', autofocus)
 
 Vue.use(VueResource)
 
